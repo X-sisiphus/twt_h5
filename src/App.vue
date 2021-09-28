@@ -1,5 +1,7 @@
+
 <template>
   <div id="app">
+ 
     <div class="loading-class" v-show="page == -1">
       <div class="content-class">
         <img src="./assets/logo-twt.png" style="width: 125px; height: 20px" />
@@ -8,105 +10,281 @@
     </div>
     <div class="cover-class" v-show="page == 0">
       <div class="start-class" @click="start"></div>
+      
     </div>
-    <div class="q1-class" v-show="page == 1">
-      <div class="q1-1-class"></div>
+    <div class="q-class" v-show="page == 1">
+      <div class="q1-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 2">
       <div class="q1-2-class">
-        <div class="q1-a-class" @click="pushChoice(1)"></div>
-        <div class="q1-b-class" @click="pushChoice(2)"></div>
-        <div class="q1-c-class" @click="pushChoice(3)"></div>
-        <div class="q1-d-class" @click="pushChoice(4)"></div>
+          <div class="nextPage" @click="nextPage()"></div>
       </div>
     </div>
-    <div class="q2-class" v-show="page == 2">
+    <div class="q-class" v-show="page == 3">
+      <div class="q2-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 4">
       <div class="q2-2-class">
-        <div class="q2-a-class" @click="pushChoice(1)"></div>
-        <div class="q2-b-class" @click="pushChoice(2)"></div>
-        <div class="q2-c-class" @click="pushChoice(3)"></div>
-        <div class="q2-d-class" @click="pushChoice(4)"></div>
+          <div class="nextPage" @click="nextPage()"></div>
       </div>
-      <div class="q2-1-class"></div>
-      <div class="back-class" @click="cancelChoice"></div>
     </div>
-    <div class="q3-class" v-show="page == 3">
+    <div class="q-class" v-show="page == 5">
+      <div class="q3-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 6">
       <div class="q3-2-class">
-        <div class="q3-a-class" @click="pushChoice(1)"></div>
-        <div class="q3-b-class" @click="pushChoice(2)"></div>
-        <div class="q3-c-class" @click="pushChoice(3)"></div>
-        <div class="q3-d-class" @click="pushChoice(4)"></div>
+          <div class="nextPage" @click="nextPage()"></div>
       </div>
-      <div class="q3-1-class"></div>
-      <div class="back-class" @click="cancelChoice"></div>
     </div>
-    <div class="q4-class" v-show="page == 4">
-      <div class="q4-1-class"></div>
+    <div class="q-class" v-show="page == 7">
+      <div class="q4-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 8">
       <div class="q4-2-class">
-        <div class="q4-a-class" @click="pushChoice(1)"></div>
-        <div class="q4-b-class" @click="pushChoice(2)"></div>
-        <div class="q4-c-class" @click="pushChoice(3)"></div>
-        <div class="q4-d-class" @click="pushChoice(4)"></div>
+          <div class="nextPage" @click="nextPage()"></div>
       </div>
-      <div class="back-class" @click="cancelChoice"></div>
     </div>
-    <div class="q5-class" v-show="page == 5">
-      <div class="q5-2-class"></div>
-      <div class="q5-1-class"></div>
-      <div class="q5-3-class"></div>
-      <div class="q5-a-class" @click="pushChoice(1)"></div>
-      <div class="q5-b-class" @click="pushChoice(2)"></div>
-      <div class="q5-c-class" @click="pushChoice(3)"></div>
-      <div class="q5-d-class" @click="pushChoice(4)"></div>
-      <div class="back-class" @click="cancelChoice"></div>
+    <div class="q-class" v-show="page == 9">
+      <div class="q5-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
     </div>
-    <div class="q6-class" v-show="page == 6">
-      <div class="q6-1-class"></div>
+    <div class="q-class" v-show="page == 10">
+      <div class="q5-2-class">
+          <div class="nextPage" @click="nextPage()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 11">
+      <div class="q6-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 12">
       <div class="q6-2-class">
-        <div class="q6-a-class" @click="endChoice(1)"></div>
-        <div class="q6-b-class" @click="endChoice(2)"></div>
-        <div class="q6-c-class" @click="endChoice(3)"></div>
-        <div class="q6-d-class" @click="endChoice(4)"></div>
-      </div>
-      <div class="q6-arrow-class"></div>
-      <div class="back-class" @click="cancelChoice"></div>
-    </div>
-    <div class="result-class" v-show="page == 7">
-      <div :class="'results-class ' + [results[ans]]">
-        <div class="name-class">{{ userName }}</div>
-        <div class="qrcode-class"></div>
-        <div class="twt-class" @click="page++"></div>
+          <div class="nextPage" @click="nextPage()"></div>
       </div>
     </div>
-    <div
-      :class="'rec-class ' + [rec ? 'studio-class' : 'news-class']"
-      v-show="page == 8"
-    ></div>
+<div class="q-class" v-show="page == 13">
+      <div class="q7-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 14">
+      <div class="q7-2-class">
+          <div class="nextPage" @click="nextPage()"></div>
+      </div>
+    </div>
+<div class="q-class" v-show="page == 15">
+      <div class="q8-1-class">
+        <div :class="[qa ? ' qa' : '']"></div>
+        <div :class="[qb ? ' qb' : '']"></div>
+        <div :class="[qc ? ' qc' : '']"></div>
+        <div :class="[qd ? ' qd' : '']"></div>
+        <div class="q-a-class" @click="pushChoiceA()"></div>
+        <div class="q-b-class" @click="pushChoiceB()"></div>
+        <div class="q-c-class" @click="pushChoiceC()"></div>
+        <div class="q-d-class" @click="pushChoiceD()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 16">
+      <div class="q8-2-class">
+          <div class="nextPage" @click="nextPage()"></div>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 17">
+      <div class="memory-class">
+        
+        <swiper ref="mySwiper" :options="swiperOptions" class="Swiper">
+          <swiper-slide><div class="img1" @click="img(1)"></div></swiper-slide>
+          <swiper-slide><div class="img2" @click="img(2)"></div></swiper-slide>
+          <swiper-slide><div class="img3" @click="img(3)"></div></swiper-slide>
+          <swiper-slide><div class="img4" @click="img(4)"></div></swiper-slide>
+          <swiper-slide><div class="img5" @click="img(5)"></div></swiper-slide>
+            <div class="swiper-pagination" slot="pagination"></div>
+          </swiper>
+         <textarea cols="10" class="textarea" v-model="text"></textarea>
+      </div>
+    </div>
+    <div class="q-class" v-show="page == 18">
+        <div class="lastpage1">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
+          <div class="iimg1"></div>
+          <div class="iiimg1"></div>
+           <div class="text">{{ text }}</div>
+          <div @click="getImg" class="getImg"></div>
+      <div id="jietu" style="display: none"></div>
+        </div>
+        
+    </div>
+    <div class="q-class" v-show="page == 19">
+        <div class="lastpage2">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
+          <div class="iimg2"></div>
+          <div class="iiimg2"></div>
+          <div class="text">{{ text }}</div>
+          <div @click="getImg" class="getImg"></div>
+      <div id="jietu" style="display: none"></div>
+        </div>
+    </div>
+    <div class="q-class" v-show="page == 20">
+        <div class="lastpage3">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
+          <div class="iimg3"></div>
+          <div class="iiimg3"></div>
+          <div class="text">{{ text }}</div>
+           <div @click="getImg" class="getImg"></div>
+      <div id="jietu" style="display: none"></div>
+        </div>
+    </div>
+    <div class="q-class" v-show="page == 21">
+        <div class="lastpage4">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
+          <div class="iimg4"></div>
+          <div class="iiimg4"></div>
+          <div class="text">{{ text }}</div>
+           <div @click="getImg" class="getImg"></div>
+      <div id="jietu" style="display: none"></div>
+        </div>
+    </div>
+    <div class="q-class" v-show="page == 22">
+        <div class="lastpage5">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
+          <div class="iimg5"></div>
+          <div class="iiimg5"></div>
+          <div class="text">{{ text }}</div>
+           <div @click="getImg" class="getImg"></div>
+      <div id="jietu" style="display: none"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
   </div>
 </template>
-
 <script>
 import Vue from 'vue'
 import Progress from 'vue-multiple-progress'
+import 'vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import html2canvas from 'html2canvas'
+
 Vue.use(Progress)
+
 export default {
   name: "App",
+  components: {
+    swiper,
+    swiperSlide
+  },
   data: () => {
     return {
-      showModal: false,
+      
+      qa: false,
+      qb: false,
+      qc: false,
+      qd: false,
       statue: false,
       count: 0,
       percent: 0,
       page: -1,
-      ans: 0,
-      rec: 0,
-      results: [
-        "lake-class",
-        "gym-class",
-        "canteen-class",
-        "library-class",
-        "room-class",
-      ],
-      choice: [],
-      userName: "",
+      text:"",
     };
   },
   mounted: function () {
@@ -114,7 +292,7 @@ export default {
   },
   watch: {
     page: function (val) {
-      if (val == 0) {
+      if (val == 18 ||val == 19 ||val == 20 ||val == 21 ||val == 22 ) {
         setTimeout(() => {
           this.statue = true;
         }, 100);
@@ -131,106 +309,461 @@ export default {
     },
   },
   methods: {
+    getImg(){
+   html2canvas(
+     document.getElementById('app'),
+     {
+       backgroundColor:null,//画出来的图片有白色的边框,不要可设置背景为透明色（null）
+       useCORS: true,//支持图片跨域
+       scale:3,//设置放大的倍数
+       dpi: 300,
+     }
+   ).then(canvas => {
+     //截图用img元素承装，显示在页面的上
+     let img = new Image();
+     img.src = canvas.toDataURL('image/jpeg');// toDataURL :图片格式转成 base64
+     document.getElementById('jietu').appendChild(img);
+ 
+     //如果你需要下载截图，可以使用a标签进行下载
+     let a = document.createElement('a');
+     a.href = canvas.toDataURL('image/jpeg');
+     a.download = '截图';
+     a.click();
+   })
+ },
     start() {
       this.page++;
     },
-    pushChoice(index) {
-      this.choice.push(index);
-      this.page++;
+    pushChoiceA() {
+      this.qa++;
+       setTimeout(() => {
+          this.page++;
+        }, 100);
+      setTimeout(() => {
+          this.qa--;
+        }, 100);
     },
-    cancelChoice() {
-      this.choice.pop();
-      this.page--;
+    pushChoiceB() {
+      this.qb++;
+       setTimeout(() => {
+          this.page++;
+        }, 100);
+      setTimeout(() => {
+          this.qb--;
+        }, 100);
     },
-    endChoice(index) {
-      this.choice.push(index);
-      if (this.choice[1] == 1 || this.choice[1] == 3) this.ans = 3;
-      else if (this.choice[2] != 2)
-        this.ans = this.choice[2] == 1 ? 2 : this.choice[2];
-      else if (this.choice[3] == 1 || this.choice[3] == 3) this.ans = 0;
-      else if (this.choice[3] == 2 || this.choice[3] == 4)
-        this.ans = this.choice[3] / 2;
-      this.rec = this.choice[5] % 2;
+    pushChoiceC() {
+      this.qc++;
+       setTimeout(() => {
+          this.page++;
+        }, 100);
+      setTimeout(() => {
+          this.qc--;
+        }, 100);
+    },
+    pushChoiceD() {
+      this.qd++;
+       setTimeout(() => {
+          this.page++;
+        }, 100);
+      setTimeout(() => {
+          this.qd--;
+        }, 100);
+    },
+    img(index){
+      this.page = this.page + index;
+    },
+    nextPage(){
       this.page++;
     },
     preload() {
       let imgs = [
         require("./assets/logo-twt.png"),
-        require("./assets/img-arrow.png"),
-        require("./assets/img-back.png"),
-        require("./assets/img-cover.png"),
-        require("./assets/img-leftcube.png"),
-        require("./assets/img-q1-1.png"),
-        require("./assets/img-q1-2.png"),
-        require("./assets/img-q1-background.png"),
-        require("./assets/img-q2-1.png"),
-        require("./assets/img-q2-2.png"),
-        require("./assets/img-q3-1.png"),
-        require("./assets/img-q3-2.png"),
-        require("./assets/img-q4-1.png"),
-        require("./assets/img-q4-2.png"),
-        require("./assets/img-q4-background.png"),
-        require("./assets/img-q5-1.png"),
-        require("./assets/img-q5-2.png"),
-        require("./assets/img-q5-3.png"),
-        require("./assets/img-q6-1.png"),
-        require("./assets/img-q6-2.png"),
-        require("./assets/img-q6-background.png"),
-        require("./assets/img-rightcube.png"),
-        require("./assets/img-canteen.png"),
-        require("./assets/img-gym.png"),
-        require("./assets/img-lake.png"),
-        require("./assets/img-library.png"),
-        require("./assets/img-news.png"),
-        require("./assets/img-room.png"),
-        require("./assets/img-studio.png"),
-        require("./assets/arrow.png"),
-        require("./assets/twt-logo.png"),
-        require("./assets/start.png"),
-        require("./assets/twt.png"),
-        require("./assets/QRcode.png"),
-        require("./assets/img-text.png"),
+        require("./assets/bMemory.png"),
+        require("./assets/img1.png"),
+        require("./assets/img2.png"),
+        require("./assets/img3.png"),
+        require("./assets/img4.png"),
+        require("./assets/img5.png"),
+        require("./assets/pageFirst.png"),
+        require("./assets/pick.png"),
+        require("./assets/question-1.png"),
+        require("./assets/question-2.png"),
+        require("./assets/question-3.png"),
+        require("./assets/question-4.png"),
+        require("./assets/question-5.png"),
+        require("./assets/question-6.png"),
+        require("./assets/question-7.png"),
+        require("./assets/question-8.png"),
+        require("./assets/question-one.png"),
+        require("./assets/question-two.png"),
+        require("./assets/question-three.png"),
+        require("./assets/question-four.png"),
+        require("./assets/question-five.png"),
+        require("./assets/question-six.png"),
+        require("./assets/question-seven.png"),
+        require("./assets/question-eight.png"),
+        require("./assets/lastPage.png"),
       ];
       for (let img of imgs) {
         let image = new Image();
         image.src = img;
         image.onload = () => {
           this.count++;
-          this.percent = Math.floor((this.count / 35) * 100);
+          this.percent = Math.floor((this.count / 26) * 100);
+          if(this.percent == 100)this.page++;
         };
       }
     },
   },
 };
+    
 </script>
 
 <style>
+
 #app {
   position: relative;
   text-align: center;
   overflow: hidden;
 }
-.qrcode-class {
+.getImg{
+  font-size: 17px;
   position: absolute;
-  left: 32px;
-  bottom: 18px;
-  width: 35px;
-  height: 35px;
-  border-radius: 4px;
-  background-image: url("./assets/QRcode.png");
-  background-size: 100% 100%;
+  left: 55%;
+  top: 89%;
+  width: 35%;
+  height: 5%;
 }
-.twt-class {
+.text{
+  font-size: 17px;
   position: absolute;
-  right: 74px;
-  bottom: 22px;
-  width: 20px;
-  height: 20px;
-  background-image: url("./assets/twt.png");
-  background-size: 100% 100%;
-  animation: twtani 0.5s ease infinite;
-  -webkit-animation: twtani 0.5s ease infinite;
+  left: 52%;
+  top: 71%;
+  width: 30%;
+  height: 40%;
+  color:maroon;
 }
+.textarea{
+      background:transparent;
+      border-style:none; 
+      border:0;  
+    background-color:transparent;    
+    height: auto;  
+    outline:none; 
+   resize:none; 
+   overflow-y:hidden;
+   overflow-x:hidden;
+   font-size: 26px;
+  position: absolute;
+  left: 28%;
+  top: 80%;
+  width: 70%;
+  height: 40%;
+  color:maroon;
+  
+}
+.iiimg5{
+  position: absolute;
+  left: 58%;
+  top: 62%;
+  width: 28%;
+  height: 11%;
+  background-image: url("./assets/jiaoshi.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: ani 1s ease;
+  -webkit-animation: ani 0.4s ease;
+}
+.iiimg4{
+  position: absolute;
+  left: 58%;
+  top: 62%;
+  width: 28%;
+  height: 11%;
+  background-image: url("./assets/fensi.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: ani 1s ease;
+  -webkit-animation: ani 0.4s ease;
+}
+.iiimg3{
+  position: absolute;
+  left: 58%;
+  top: 62%;
+  width: 28%;
+  height: 11%;
+  background-image: url("./assets/xuezi.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: ani 1s ease;
+  -webkit-animation: ani 0.4s ease;
+}
+.iiimg2{
+  position: absolute;
+  left: 58%;
+  top: 62%;
+  width: 28%;
+  height: 11%;
+  background-image: url("./assets/fensi.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: ani 1s ease;
+  -webkit-animation: ani 0.4s ease;
+}
+.iiimg1{
+  position: absolute;
+  left: 58%;
+  top: 62%;
+  width: 28%;
+  height: 11%;
+  background-image: url("./assets/shitang.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: ani 1s ease;
+  -webkit-animation: ani 0.4s ease;
+}
+.iimg5{
+  position: absolute;
+  left: 11%;
+  top: 60.8%;
+  width: 30%;
+  height: 21%;
+  background-image: url("./assets/img5.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.iimg4{
+  position: absolute;
+  left: 11%;
+  top: 60.8%;
+  width: 30%;
+  height: 21%;
+  background-image: url("./assets/img4.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.iimg3{
+  position: absolute;
+  left: 11%;
+  top: 60.8%;
+  width: 30%;
+  height: 21%;
+  background-image: url("./assets/img3.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.iimg2{
+  position: absolute;
+  left: 11%;
+  top: 60.8%;
+  width: 30%;
+  height: 21%;
+  background-image: url("./assets/img2.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.iimg1{
+  position: absolute;
+  left: 11%;
+  top: 60.8%;
+  width: 30%;
+  height: 21%;
+  background-image: url("./assets/img1.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.list8move {
+  right: 50%;
+  top: 50%;
+  transform: translate(-104%,0%);
+  
+}
+.list8-class {
+  position: absolute;
+  left: 100%;
+  top: 53.5%;
+  width: 83%;
+  height: 6%;
+  background-image: url("./assets/list8.png");
+  background-size: 100% 100%;
+  transition: all 2.25s ease;
+}
+.list7move {
+  right: 50%;
+  top: 50%;
+  transform: translate(-104%,0%);
+  
+}
+.list7-class {
+  position: absolute;
+  left: 100%;
+  top: 47.5%;
+  width: 85%;
+  height: 6%;
+  background-image: url("./assets/list7.png");
+  background-size: 100% 100%;
+  transition: all 2s ease;
+}
+.list6move {
+  right: 50%;
+  top: 50%;
+  transform: translate(129.3%,0%);
+  
+}
+.list6-class {
+  position: absolute;
+  left: -100%;
+  top: 42.2%;
+  width: 80%;
+  height: 6%;
+  background-image: url("./assets/list6.png");
+  background-size: 100% 100%;
+  transition: all 1.75s ease;
+}
+.list5move {
+  right: 50%;
+  top: 50%;
+  transform: translate(-104%,0%);
+  
+}
+.list5-class {
+  position: absolute;
+  left: 100%;
+  top: 37%;
+  width: 85%;
+  height: 6%;
+  background-image: url("./assets/list5.png");
+  background-size: 100% 100%;
+  transition: all 1.5s ease;
+}
+.list4move {
+  right: 50%;
+  top: 50%;
+  transform: translate(150%,0%);
+  
+}
+.list4-class {
+  position: absolute;
+  left: -100%;
+  top: 31.5%;
+  width: 69%;
+  height: 6%;
+  background-image: url("./assets/list4.png");
+  background-size: 100% 100%;
+  transition: all 1.25s ease;
+}
+.list3move {
+  right: 50%;
+  top: 50%;
+  transform: translate(159.5%,0%);
+  
+}
+.list3-class {
+  position: absolute;
+  left: -100%;
+  top: 26%;
+  width: 65%;
+  height: 6%;
+  background-image: url("./assets/list3.png");
+  background-size: 100% 100%;
+  transition: all 1s ease;
+}
+.list2move {
+  right: 50%;
+  top: 50%;
+  transform: translate(148%,0%);
+  
+}
+.list2-class {
+  position: absolute;
+  left: -100%;
+  top: 20.5%;
+  width: 70%;
+  height: 6%;
+  background-image: url("./assets/list2.png");
+  background-size: 100% 100%;
+  transition: all 0.75s ease;
+}
+.list1move {
+  right: 50%;
+  top: 50%;
+  transform: translate(-103.8%,0%);
+  
+}
+.list1-class {
+  position: absolute;
+  left: 100%;
+  top: 15%;
+  width: 85%;
+  height: 6%;
+  background-image: url("./assets/list1.png");
+  background-size: 100% 100%;
+  transition: all 0.5s ease;
+}
+.lastpage1{
+width: 100%;
+  height: 100vh;
+  background-image: url("./assets/lastPage.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.lastpage2{
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/lastPage.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.lastpage3{
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/lastPage.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.lastpage4{
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/lastPage.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.lastpage5{
+  width: 100%;
+  height: 100vh;
+  background-image: url("./assets/lastPage.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.Swiper{
+  height: 46%;
+  width: 60%;
+  position: fixed;
+  top: 22%;
+  left: 21%;
+  margin: 0%;
+}
+
+.wrap {
+		padding: 40rpx;
+	}
+
 .loading-class {
   height: 100vh;
   width: 100%;
@@ -245,14 +778,14 @@ export default {
 .cover-class {
   width: 100%;
   height: 100vh;
-  background-image: url("./assets/pageFirst.jpg");
+  background-image: url("./assets/pageFirst.png");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
 .start-class {
   width: 64.6vw;
-  height: 20.8vw;
+  height: 35vw;
   position: absolute;
   left: 16%;
   top: 55%;
@@ -260,81 +793,14 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
 }
-.back-class {
-  background-image: url("./assets/img-back.png");
-  background-size: 100% 100%;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: 35px;
-  left: 50%;
-  transform: translateX(calc(-50% - 155px));
-}
-.q1-class {
+
+.q-class {
   width: 100%;
   height: 100vh;
   
   background-size: 100% 100%;
 }
-.q2-class {
-  width: 100%;
-  height: 100vh;
-  background-color: #9ab8ff;
-}
-.q3-class {
-  width: 100%;
-  height: 100vh;
-  background-color: #ffffff;
-}
-.q4-class {
-  width: 100%;
-  height: 100vh;
-  background-color: #373c66;
-  background-image: url("./assets/img-q4-background.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.q5-class {
-  width: 100%;
-  height: 100vh;
-  background-color: #f2f2f2;
-}
-.q6-class {
-  width: 100%;
-  height: 100vh;
-  background-color: #c7c1fd;
-  background-image: url("./assets/img-q6-background.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.result-class {
-  width: 100%;
-  height: 100vh;
-}
-.results-class {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100vh;
-  background-size: 100% 100%;
-}
-.rec-class {
-  width: 100%;
-  height: 100vh;
-  background-color: #ffffff;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.news-class {
-  background-image: url("./assets/img-news.png");
-}
-.studio-class {
-  background-image: url("./assets/img-studio.png");
-}
+
 .name-class {
   text-align: center;
   overflow: hidden;
@@ -349,136 +815,168 @@ export default {
   left: 50%;
   transform: translateX(calc(-50% - 143px));
 }
-.lake-class {
-  background-image: url("./assets/img-lake.png");
-}
-.gym-class {
-  background-image: url("./assets/img-gym.png");
-}
-.canteen-class {
-  background-image: url("./assets/img-canteen.png");
-}
-.room-class {
-  background-image: url("./assets/img-room.png");
-}
-.library-class {
-  background-image: url("./assets/img-library.png");
-}
-.logo-class {
-  background-image: url("./assets/twt-logo.png");
+
+.img1{
+  background-image: url("./assets/img1.png");
   background-size: 100% 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(calc(-50% + 100px), calc(-50% + 50px));
-  width: 80px;
-  height: 80px;
-}
-.text-class {
-  background-image: url("./assets/img-text.png");
-  background-size: 100% 100%;
-  width: 306px;
-  height: 193px;
-  position: absolute;
-  left: -306px;
-  top: 50%;
-  transform: translateY(calc(-50% - 50px));
-  animation: textin 1.5s ease 1;
-  -webkit-animation: textin 1.5s ease 1;
-  animation-fill-mode: forwards;
-}
-.arrow-class {
-  background-image: url("./assets/arrow.png");
-  background-size: 100% 100%;
-  position: absolute;
-  right: -80px;
-  top: 700px;
-  width: 45px;
-  height: 42px;
-  transition: all 3s ease;
-}
-.q1-1-class {
+  width: 100%;
+  height: 100%;
   
+  
+}
+.img2{
+  background-image: url("./assets/img2.png");
   background-size: 100% 100%;
-  width: 320px;
-  height: 36px;
+  width: 100%;
+  height: 100%;
+  
+}
+.img3{
+  background-image: url("./assets/img3.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  
+}
+.img4{
+  background-image: url("./assets/img4.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  
+}
+.img5{
+  background-image: url("./assets/img5.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.q1-1-class {
+  background-image: url("./assets/question-one.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100vh;
   position: absolute;
-  right: -320px;
-  top: 72px;
-  animation: q1labelin 0.5s ease 1;
-  -webkit-animation: q1labelin 0.5s ease 1;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q2-1-class {
-  background-image: url("./assets/img-q2-1.png");
+  background-image: url("./assets/question-two.png");
   background-size: 100% 100%;
   width: 100%;
-  height: 36px;
+  height: 100vh;
   position: absolute;
-  right: -320px;
-  top: 72px;
-  animation: q2labelin 0.5s ease 1;
-  -webkit-animation: q2labelin 0.5s ease 1;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q3-1-class {
-  background-image: url("./assets/img-q3-1.png");
+  background-image: url("./assets/question-three.png");
   background-size: 100% 100%;
   width: 100%;
-  height: 36px;
+  height: 100vh;
   position: absolute;
-  left: -340px;
-  top: 72px;
-  animation: q3labelin 0.5s ease 1;
-  -webkit-animation: q3labelin 0.5s ease 1;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q4-1-class {
-  background-image: url("./assets/img-q4-1.png");
+  background-image: url("./assets/question-four.png");
   background-size: 100% 100%;
-  width: 0;
-  height: 36px;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 72px;
-  animation: q4labelin 0.5s ease 1;
-  -webkit-animation: q4labelin 0.5s ease 1;
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q5-1-class {
-  background-image: url("./assets/img-q5-1.png");
+  background-image: url("./assets/question-five.png");
   background-size: 100% 100%;
-  width: 0;
-  height: 240px;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 340px;
-  animation: q5labelin 0.5s ease 1;
-  -webkit-animation: q5labelin 0.5s ease 1;
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q6-1-class {
-  background-image: url("./assets/img-q6-1.png");
+  background-image: url("./assets/question-six.png");
   background-size: 100% 100%;
-  width: 365px;
-  height: 36px;
+  width: 100%;
+  height: 100vh;
   position: absolute;
-  right: -320px;
-  top: 72px;
-  animation: q6labelin 0.5s ease 1;
-  -webkit-animation: q6labelin 0.5s ease 1;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
+  animation-fill-mode: forwards;
+}
+.q7-1-class {
+  background-image: url("./assets/question-seven.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
+  animation-fill-mode: forwards;
+}
+.q8-1-class {
+  background-image: url("./assets/question-eight.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
+  animation-fill-mode: forwards;
+}
+.memory-class {
+  background-image: url("./assets/bMemory.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q1-2-class {
-  background-color: brown;
+  background-image: url("./assets/question-1.png");
   background-size: 100% 100%;
-  width: 300px;
-  height: 540px;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   left: 50%;
-  top: 40px;
   transform: translateX(-50%);
   opacity: 0.3;
   animation: allin 2s ease 1;
@@ -486,400 +984,167 @@ export default {
   animation-fill-mode: forwards;
 }
 .q2-2-class {
-  background-image: url("./assets/img-q2-2.png");
+  background-image: url("./assets/question-2.png");
   background-size: 100% 100%;
   width: 100%;
   height: 100vh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 0;
   opacity: 0.3;
   animation: allin 2s ease 1;
   -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q3-2-class {
-  background-image: url("./assets/img-q3-2.png");
+  background-image: url("./assets/question-3.png");
   background-size: 100% 100%;
   width: 100%;
   height: 100vh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 0;
   opacity: 0.3;
   animation: allin 2s ease 1;
   -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q4-2-class {
-  background-image: url("./assets/img-q4-2.png");
-  background-size: 100% 100%;
-  width: 335px;
-  height: 580px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(calc(-50% + 10px));
-  top: 42px;
-  opacity: 0.3;
-  animation: allin 2s ease 1;
-  -webkit-animation: allin 2s ease 1;
-  animation-fill-mode: forwards;
-}
-.q5-2-class {
-  background-image: url("./assets/img-q5-2.png");
+  background-image: url("./assets/question-4.png");
   background-size: 100% 100%;
   width: 100%;
   height: 100vh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 0;
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
+  animation-fill-mode: forwards;
+}
+.q5-2-class {
+  background-image: url("./assets/question-5.png");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0.3;
   animation: allin 2s ease 1;
   -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
 .q6-2-class {
-  background-image: url("./assets/img-q6-2.png");
+  background-image: url("./assets/question-6.png");
   background-size: 100% 100%;
-  width: 330px;
-  height: 475px;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   left: 50%;
-  transform: translateX(calc(-50%));
-  top: 40px;
+  transform: translateX(-50%);
   opacity: 0.3;
   animation: allin 2s ease 1;
   -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
-.q5-3-class {
-  background-image: url("./assets/img-q5-3.png");
+.q7-2-class {
+  background-image: url("./assets/question-7.png");
   background-size: 100% 100%;
-  width: 215px;
-  height: 180px;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   left: 50%;
-  transform: translateX(calc(-50% - 40px));
-  top: 85px;
-  animation: q5textmove 1s ease 1;
-  -webkit-animation: q5textmove 1s ease 1;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
-.q6-arrow-class {
-  background-image: url("./assets/img-arrow.png");
+.q8-2-class {
+  background-image: url("./assets/question-8.png");
   background-size: 100% 100%;
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100vh;
   position: absolute;
-  right: -50px;
-  top: 365px;
-  animation: q6arrowmove 1s ease 1;
-  -webkit-animation: q6arrowmove 1s ease 1;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.3;
+  animation: allin 2s ease 1;
+  -webkit-animation: allin 2s ease 1;
   animation-fill-mode: forwards;
 }
-.q1-a-class {
-  background-color: #1b1b1c;
+.q-a-class {
   position: absolute;
-  width: 220px;
-  height: 80px;
-  top: 145px;
-  left: 60px;
+  width: 30%;
+  height: 5%;
+  top: 78%;
+  left: 15%;
 }
-.q1-b-class {
-  background-color: #1b1b1c;
+.q-b-class {
   position: absolute;
-  width: 220px;
-  height: 80px;
-  top: 235px;
-  left: 60px;
+  width: 30%;
+  height: 5%;
+  top: 78%;
+  right: 20%;
 }
-.q1-c-class {
-  background-color: #1b1b1c;
+.q-c-class {
   position: absolute;
-  width: 220px;
-  height: 80px;
-  top: 325px;
-  left: 60px;
+  width: 30%;
+  height: 5%;
+  top: 83%;
+  left: 15%;
 }
-.q1-d-class {
-  background-color: #1b1b1c;
+.q-d-class {
   position: absolute;
-  width: 220px;
-  height: 80px;
-  top: 415px;
-  left: 60px;
+  width: 30%;
+  height: 5%;
+  top: 83%;
+  right: 20%;
 }
-.q2-a-class {
+.qa{
+  background-image: url("./assets/pick.png");
+  background-size: 100% 100%;
   position: absolute;
-  width: 275px;
-  height: 130px;
-  top: 125px;
-  left: 55px;
+  width: 8%;
+  height: 5%;
+  top: 78%;
+  left: 15%;
 }
-.q2-b-class {
+.qb{
+  background-image: url("./assets/pick.png");
+  background-size: 100% 100%;
   position: absolute;
-  width: 265px;
-  height: 120px;
-  top: 255px;
-  left: 85px;
+  width: 8%;
+  height: 5%;
+  top: 78%;
+  right: 40%;
 }
-.q2-c-class {
+.qc{
+  background-image: url("./assets/pick.png");
+  background-size: 100% 100%;
   position: absolute;
-  width: 270px;
-  height: 115px;
-  top: 375px;
-  left: 15px;
+  width: 8%;
+  height: 5%;
+  top: 83%;
+  left: 15%;
 }
-.q2-d-class {
+.qd{
+  background-image: url("./assets/pick.png");
+  background-size: 100% 100%;
   position: absolute;
-  width: 265px;
-  height: 100px;
-  top: 490px;
-  left: 70px;
+  width: 8%;
+  height: 5%;
+  top: 83%;
+  right: 40%;
 }
-.q3-a-class {
+.nextPage{
   position: absolute;
-  width: 330px;
-  height: 81px;
-  top: 200px;
-  left: 0;
+  width: 100%;
+  height: 10%;
+  top: 90%;
 }
-.q3-b-class {
-  position: absolute;
-  width: 330px;
-  height: 81px;
-  top: 281px;
-  left: 0;
-}
-.q3-c-class {
-  position: absolute;
-  width: 375px;
-  height: 81px;
-  top: 363px;
-  left: 0;
-}
-.q3-d-class {
-  position: absolute;
-  width: 330px;
-  height: 83px;
-  top: 443px;
-  left: 0;
-}
-.q4-a-class {
-  position: absolute;
-  width: 270px;
-  height: 75px;
-  top: 123px;
-  left: 15px;
-}
-.q4-b-class {
-  position: absolute;
-  width: 252px;
-  height: 90px;
-  top: 208px;
-  left: 70px;
-}
-.q4-c-class {
-  position: absolute;
-  width: 245px;
-  height: 85px;
-  top: 315px;
-  left: 0px;
-}
-.q4-d-class {
-  position: absolute;
-  width: 295px;
-  height: 80px;
-  top: 420px;
-  left: 45px;
-}
-.q5-a-class {
-  position: absolute;
-  width: 345px;
-  height: 62px;
-  top: 330px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.q5-b-class {
-  position: absolute;
-  width: 345px;
-  height: 65px;
-  top: 392px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.q5-c-class {
-  position: absolute;
-  width: 345px;
-  height: 65px;
-  top: 457px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.q5-d-class {
-  position: absolute;
-  width: 345px;
-  height: 65px;
-  top: 522px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.q6-a-class {
-  position: absolute;
-  width: 170px;
-  height: 90px;
-  top: 120px;
-  left: 15px;
-}
-.q6-b-class {
-  position: absolute;
-  width: 210px;
-  height: 65px;
-  top: 230px;
-  left: 130px;
-}
-.q6-c-class {
-  position: absolute;
-  width: 210px;
-  height: 65px;
-  top: 325px;
-  left: 25px;
-}
-.q6-d-class {
-  position: absolute;
-  width: 210px;
-  height: 65px;
-  top: 420px;
-  left: 82px;
-}
-.el-message-box {
-  width: 250px;
-}
-.el-message-box__input {
-  padding-top: 5px;
-  height: 50px;
-}
-.el-input__inner {
-  text-align: center;
-}
-.el-message-box__content {
-  padding: 0 15px;
-}
-.leftcubemove {
-  left: 50%;
-  top: 50%;
-  transform: translate(calc(-50% - 120px), calc(-50% - 190px));
-  animation: leftcube 3s ease infinite;
-  -webkit-animation: leftcube 3s ease infinite;
-}
-.rightcubemove {
-  right: 50%;
-  top: 50%;
-  transform: translate(calc(50% + 20px), calc(-50% - 40px));
-  animation: rightcube 3s ease 4s infinite;
-  -webkit-animation: rightcube 3s ease 4s infinite;
-}
-.arrowmove {
-  right: 50%;
-  top: 50%;
-  transform: translate(calc(50% + 100px), calc(-50% + 135px));
-  animation: arrow 3s ease 3s infinite;
-  -webkit-animation: arrow 3s ease 3s infinite;
-}
-@keyframes twtani {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
-@keyframes textin {
-  0% {
-    left: -306px;
-  }
-  70% {
-    left: 50%;
-    transform: translateX(calc(-50% + 50px)) translateY(calc(-50% - 50px));
-  }
-  100% {
-    left: 50%;
-    transform: translateX(-50%) translateY(calc(-50% - 50px));
-  }
-}
-@keyframes startani {
-  0% {
-    transform: scale(1) translate(calc(-50% + 9px), calc(-50% + 126px));
-  }
-  50% {
-    transform: scale(1.05) translate(calc(-50% + 9px), calc(-50% + 124px));
-  }
-  100% {
-    transform: scale(1) translate(calc(-50% + 9px), calc(-50% + 126px));
-  }
-}
-@keyframes leftcube {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: calc(50% + 40px);
-  }
-  100% {
-    top: 50%;
-  }
-}
-@keyframes rightcube {
-  0% {
-    top: 50%;
-  }
-  50% {
-    top: calc(50% + 30px);
-  }
-  100% {
-    top: 50%;
-  }
-}
-@keyframes arrow {
-  0% {
-    top: 50%;
-    right: 50%;
-  }
-  50% {
-    top: calc(50% + 10px);
-    right: calc(50% - 20px);
-  }
-  100% {
-    top: 50%;
-    right: 50%;
-  }
-}
-@keyframes arrowmove {
-  0% {
-    right: -80px;
-    bottom: -80px;
-  }
-  100% {
-    right: 50%;
-    bottom: 50%;
-    transform: translate(calc(50%), calc(50% + 150px));
-  }
-}
-@keyframes allout {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
 @keyframes allin {
   0% {
     opacity: 0.3;
@@ -888,77 +1153,25 @@ export default {
     opacity: 1;
   }
 }
-@keyframes q1labelin {
+
+@keyframes ani {
   0% {
-    right: -340px;
+    transform: scale(1.5);
+  }
+  10% {
+    transform: scale(1.425);
+  }
+  25% {
+      transform: scale(1.3);
+    }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
   }
   100% {
-    right: 50%;
-    transform: translateX(calc(50% + 40px));
-  }
-}
-@keyframes q2labelin {
-  0% {
-    right: -340px;
-  }
-  100% {
-    right: 50%;
-    transform: translateX(50%);
-  }
-}
-@keyframes q3labelin {
-  0% {
-    left: -340px;
-  }
-  100% {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-@keyframes q4labelin {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 352px;
-  }
-}
-@keyframes q5labelin {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 320px;
-  }
-}
-@keyframes q6labelin {
-  0% {
-    right: -340px;
-  }
-  100% {
-    right: 50%;
-    transform: translateX(calc(50% + 15px));
-  }
-}
-@keyframes q5textmove {
-  0% {
-    transform: translateX(calc(-50% - 40px));
-    top: 85px;
-  }
-  100% {
-    transform: translateX(calc(-50% - 30px));
-    top: 70px;
-  }
-}
-@keyframes q6arrowmove {
-  0% {
-    right: -50px;
-    top: 365px;
-  }
-  100% {
-    right: 50%;
-    transform: translateX(calc(50% + 130px));
-    top: 345px;
+    transform: scale(1);
   }
 }
 
@@ -1035,40 +1248,5 @@ export default {
     height: 68px;
   }
 }
-@media screen and (max-height: 640px) {
-  .q1-class,
-  .q2-class,
-  .q3-class,
-  .q4-class,
-  .cover-class,
-  .q5-class,
-  .q6-class,
-  .loading-class,
-  .cover-class,
-  .results-class,
-  .q2-2-class,
-  .q3-2-class,
-  .q5-2-class,
-  .result-class {
-    height: 667px;
-  }
-}
-@media screen and (min-height: 700px) {
-  .q1-class,
-  .q2-class,
-  .q3-class,
-  .q4-class,
-  .cover-class,
-  .q5-class,
-  .q6-class,
-  .loading-class,
-  .cover-class,
-  .results-class,
-  .q2-2-class,
-  .q3-2-class,
-  .q5-2-class,
-  .result-class {
-    height: 667px;
-  }
-}
+
 </style>
