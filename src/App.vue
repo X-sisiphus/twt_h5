@@ -457,7 +457,7 @@ export default {
   height: 100%;
 }
 .text{
-  font-size: 17px;
+  font-size: 109%;
   position: absolute;
   left: 52%;
   top: 71%;
@@ -475,7 +475,7 @@ export default {
    resize:none; 
    overflow-y:hidden;
    overflow-x:hidden;
-   font-size: 26px;
+   font-size: 200%;
   position: absolute;
   left: 28%;
   top: 80%;
