@@ -172,7 +172,7 @@
           <div :class="['list6-class' + (statue ? ' list6move' : '')]"><img src="@/assets/list6.png" height="100%" width="100%"></div>
           <div :class="['list7-class' + (statue ? ' list7move' : '')]"><img src="@/assets/list7.png" height="100%" width="100%"></div>
           <div :class="['list8-class' + (statue ? ' list8move' : '')]"><img src="@/assets/list8.png" height="100%" width="100%"></div>
-          <div class="iimg1"><img src="@/assets/img1.png" height="100%" width="100%"></div>
+          <img src="@/assets/img1.png" height="100%" width="100%" style="position: absolute;left: 11%;top: 60.8%;width: 30%;height: 21%;">
           <div class="iiimg1"><img src="@/assets/shitang.png" height="100%" width="100%"></div>
            <div class="text">{{ text }}</div>
           <div @click="getImg" class="getImg"></div>
