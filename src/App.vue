@@ -149,8 +149,7 @@
       </div>
     </div>
     <div class="q-class" v-show="page == 17">
-      <div class="memory-class">
-        
+      <div class="memory-class" :style="{height:bgHeight}">
         <swiper ref="mySwiper" :options="swiperOptions" class="Swiper">
           <swiper-slide><div class="img1" @click="img(1)"></div></swiper-slide>
           <swiper-slide><div class="img2" @click="img(2)"></div></swiper-slide>
@@ -278,9 +277,11 @@ export default {
     swiper,
     swiperSlide
   },
+  
+
   data: () => {
     return {
-      
+      bgHeight: "",
       qa: false,
       qb: false,
       qc: false,
@@ -292,6 +293,9 @@ export default {
       text:"",
     };
   },
+  
+    
+  
   mounted: function () {
     this.preload();
   },
@@ -320,8 +324,7 @@ export default {
      {
        backgroundColor:null,//画出来的图片有白色的边框,不要可设置背景为透明色（null）
        useCORS: true,//支持图片跨域
-       scale:3,//设置放大的倍数
-       dpi: 300,
+
      }
    ).then(canvas => {
      //截图用img元素承装，显示在页面的上
@@ -380,6 +383,7 @@ export default {
     },
     nextPage(){
       this.page++;
+      if(this.page == 17)this.bgHeight = document.body.scrollHeight + "px";
     },
     preload() {
       let imgs = [
@@ -449,8 +453,8 @@ export default {
   position: absolute;
   left: 55%;
   top: 89%;
-  width: 35%;
-  height: 5%;
+  width: 100%;
+  height: 100%;
 }
 .text{
   font-size: 17px;
@@ -921,7 +925,7 @@ width: 100%;
   background-image: url("./assets/bMemory.png");
   background-size: 100% 100%;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
