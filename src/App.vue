@@ -164,16 +164,17 @@
     </div>
     <div class="q-class" v-show="page == 18">
         <div class="lastpage1">
-          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
-          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
-          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
-          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
-          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
-          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
-          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
-          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
-          <div class="iimg1"></div>
-          <div class="iiimg1"></div>
+          <img src="@/assets/lastPage.png" height="100%" width="100%">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"><img src="@/assets/list2.png" height="100%" width="100%"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"><img src="@/assets/list3.png" height="100%" width="100%"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"><img src="@/assets/list4.png" height="100%" width="100%"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"><img src="@/assets/list5.png" height="100%" width="100%"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"><img src="@/assets/list6.png" height="100%" width="100%"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"><img src="@/assets/list7.png" height="100%" width="100%"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"><img src="@/assets/list8.png" height="100%" width="100%"></div>
+          <div class="iimg1"><img src="@/assets/img1.png" height="100%" width="100%"></div>
+          <div class="iiimg1"><img src="@/assets/shitang.png" height="100%" width="100%"></div>
            <div class="text">{{ text }}</div>
           <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
@@ -182,16 +183,17 @@
     </div>
     <div class="q-class" v-show="page == 19">
         <div class="lastpage2">
-          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
-          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
-          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
-          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
-          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
-          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
-          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
-          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
-          <div class="iimg2"></div>
-          <div class="iiimg2"></div>
+          <img src="@/assets/lastPage.png" height="100%" width="100%">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"><img src="@/assets/list2.png" height="100%" width="100%"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"><img src="@/assets/list3.png" height="100%" width="100%"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"><img src="@/assets/list4.png" height="100%" width="100%"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"><img src="@/assets/list5.png" height="100%" width="100%"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"><img src="@/assets/list6.png" height="100%" width="100%"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"><img src="@/assets/list7.png" height="100%" width="100%"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"><img src="@/assets/list8.png" height="100%" width="100%"></div>
+          <div class="iimg2"><img src="@/assets/img2.png" height="100%" width="100%"></div>
+          <div class="iiimg2"><img src="@/assets/fensi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
           <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
@@ -199,16 +201,17 @@
     </div>
     <div class="q-class" v-show="page == 20">
         <div class="lastpage3">
-          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
-          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
-          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
-          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
-          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
-          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
-          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
-          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
-          <div class="iimg3"></div>
-          <div class="iiimg3"></div>
+          <img src="@/assets/lastPage.png" height="100%" width="100%">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"><img src="@/assets/list2.png" height="100%" width="100%"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"><img src="@/assets/list3.png" height="100%" width="100%"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"><img src="@/assets/list4.png" height="100%" width="100%"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"><img src="@/assets/list5.png" height="100%" width="100%"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"><img src="@/assets/list6.png" height="100%" width="100%"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"><img src="@/assets/list7.png" height="100%" width="100%"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"><img src="@/assets/list8.png" height="100%" width="100%"></div>
+          <div class="iimg3"><img src="@/assets/img3.png" height="100%" width="100%"></div>
+          <div class="iiimg3"><img src="@/assets/xuezi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
            <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
@@ -216,16 +219,17 @@
     </div>
     <div class="q-class" v-show="page == 21">
         <div class="lastpage4">
-          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
-          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
-          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
-          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
-          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
-          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
-          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
-          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
-          <div class="iimg4"></div>
-          <div class="iiimg4"></div>
+          <img src="@/assets/lastPage.png" height="100%" width="100%">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"><img src="@/assets/list2.png" height="100%" width="100%"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"><img src="@/assets/list3.png" height="100%" width="100%"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"><img src="@/assets/list4.png" height="100%" width="100%"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"><img src="@/assets/list5.png" height="100%" width="100%"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"><img src="@/assets/list6.png" height="100%" width="100%"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"><img src="@/assets/list7.png" height="100%" width="100%"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"><img src="@/assets/list8.png" height="100%" width="100%"></div>
+          <div class="iimg4"><img src="@/assets/img4.png" height="100%" width="100%"></div>
+          <div class="iiimg4"><img src="@/assets/fensi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
            <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
@@ -233,16 +237,17 @@
     </div>
     <div class="q-class" v-show="page == 22">
         <div class="lastpage5">
-          <div :class="['list1-class' + (statue ? ' list1move' : '')]"></div>
-          <div :class="['list2-class' + (statue ? ' list2move' : '')]"></div>
-          <div :class="['list3-class' + (statue ? ' list3move' : '')]"></div>
-          <div :class="['list4-class' + (statue ? ' list4move' : '')]"></div>
-          <div :class="['list5-class' + (statue ? ' list5move' : '')]"></div>
-          <div :class="['list6-class' + (statue ? ' list6move' : '')]"></div>
-          <div :class="['list7-class' + (statue ? ' list7move' : '')]"></div>
-          <div :class="['list8-class' + (statue ? ' list8move' : '')]"></div>
-          <div class="iimg5"></div>
-          <div class="iiimg5"></div>
+          <img src="@/assets/lastPage.png" height="100%" width="100%">
+          <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
+          <div :class="['list2-class' + (statue ? ' list2move' : '')]"><img src="@/assets/list2.png" height="100%" width="100%"></div>
+          <div :class="['list3-class' + (statue ? ' list3move' : '')]"><img src="@/assets/list3.png" height="100%" width="100%"></div>
+          <div :class="['list4-class' + (statue ? ' list4move' : '')]"><img src="@/assets/list4.png" height="100%" width="100%"></div>
+          <div :class="['list5-class' + (statue ? ' list5move' : '')]"><img src="@/assets/list5.png" height="100%" width="100%"></div>
+          <div :class="['list6-class' + (statue ? ' list6move' : '')]"><img src="@/assets/list6.png" height="100%" width="100%"></div>
+          <div :class="['list7-class' + (statue ? ' list7move' : '')]"><img src="@/assets/list7.png" height="100%" width="100%"></div>
+          <div :class="['list8-class' + (statue ? ' list8move' : '')]"><img src="@/assets/list8.png" height="100%" width="100%"></div>
+          <div class="iimg5"><img src="@/assets/img5.png" height="100%" width="100%"></div>
+          <div class="iiimg5"><img src="@/assets/jiaoshi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
            <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
@@ -481,12 +486,8 @@ export default {
   top: 62%;
   width: 28%;
   height: 11%;
-  background-image: url("./assets/jiaoshi.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: ani 1s ease;
-  -webkit-animation: ani 0.4s ease;
+  
+ 
 }
 .iiimg4{
   position: absolute;
@@ -494,10 +495,6 @@ export default {
   top: 62%;
   width: 28%;
   height: 11%;
-  background-image: url("./assets/fensi.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
   animation: ani 1s ease;
   -webkit-animation: ani 0.4s ease;
 }
@@ -507,10 +504,6 @@ export default {
   top: 62%;
   width: 28%;
   height: 11%;
-  background-image: url("./assets/xuezi.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
   animation: ani 1s ease;
   -webkit-animation: ani 0.4s ease;
 }
@@ -520,10 +513,6 @@ export default {
   top: 62%;
   width: 28%;
   height: 11%;
-  background-image: url("./assets/fensi.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
   animation: ani 1s ease;
   -webkit-animation: ani 0.4s ease;
 }
@@ -532,11 +521,6 @@ export default {
   left: 58%;
   top: 62%;
   width: 28%;
-  height: 11%;
-  background-image: url("./assets/shitang.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
   animation: ani 1s ease;
   -webkit-animation: ani 0.4s ease;
 }
@@ -546,10 +530,6 @@ export default {
   top: 60.8%;
   width: 30%;
   height: 21%;
-  background-image: url("./assets/img5.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .iimg4{
   position: absolute;
@@ -557,10 +537,6 @@ export default {
   top: 60.8%;
   width: 30%;
   height: 21%;
-  background-image: url("./assets/img4.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .iimg3{
   position: absolute;
@@ -568,10 +544,6 @@ export default {
   top: 60.8%;
   width: 30%;
   height: 21%;
-  background-image: url("./assets/img3.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .iimg2{
   position: absolute;
@@ -579,10 +551,6 @@ export default {
   top: 60.8%;
   width: 30%;
   height: 21%;
-  background-image: url("./assets/img2.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .iimg1{
   position: absolute;
@@ -590,10 +558,6 @@ export default {
   top: 60.8%;
   width: 30%;
   height: 21%;
-  background-image: url("./assets/img1.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .list8move {
   right: 50%;
@@ -607,7 +571,6 @@ export default {
   top: 53.5%;
   width: 83%;
   height: 6%;
-  background-image: url("./assets/list8.png");
   background-size: 100% 100%;
   transition: all 2.25s ease;
 }
@@ -623,7 +586,7 @@ export default {
   top: 47.5%;
   width: 85%;
   height: 6%;
-  background-image: url("./assets/list7.png");
+  
   background-size: 100% 100%;
   transition: all 2s ease;
 }
@@ -639,7 +602,7 @@ export default {
   top: 42.2%;
   width: 80%;
   height: 6%;
-  background-image: url("./assets/list6.png");
+ 
   background-size: 100% 100%;
   transition: all 1.75s ease;
 }
@@ -655,7 +618,7 @@ export default {
   top: 37%;
   width: 85%;
   height: 6%;
-  background-image: url("./assets/list5.png");
+  
   background-size: 100% 100%;
   transition: all 1.5s ease;
 }
@@ -671,7 +634,7 @@ export default {
   top: 31.5%;
   width: 69%;
   height: 6%;
-  background-image: url("./assets/list4.png");
+  
   background-size: 100% 100%;
   transition: all 1.25s ease;
 }
@@ -687,7 +650,7 @@ export default {
   top: 26%;
   width: 65%;
   height: 6%;
-  background-image: url("./assets/list3.png");
+  
   background-size: 100% 100%;
   transition: all 1s ease;
 }
@@ -703,7 +666,7 @@ export default {
   top: 20.5%;
   width: 70%;
   height: 6%;
-  background-image: url("./assets/list2.png");
+  
   background-size: 100% 100%;
   transition: all 0.75s ease;
 }
@@ -719,49 +682,34 @@ export default {
   top: 15%;
   width: 85%;
   height: 6%;
-  background-image: url("./assets/list1.png");
+  
   background-size: 100% 100%;
   transition: all 0.5s ease;
 }
 .lastpage1{
 width: 100%;
   height: 100vh;
-  background-image: url("./assets/lastPage.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  
 }
 .lastpage2{
   width: 100%;
   height: 100vh;
-  background-image: url("./assets/lastPage.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  
 }
 .lastpage3{
   width: 100%;
   height: 100vh;
-  background-image: url("./assets/lastPage.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  
 }
 .lastpage4{
   width: 100%;
   height: 100vh;
-  background-image: url("./assets/lastPage.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+
 }
 .lastpage5{
   width: 100%;
   height: 100vh;
-  background-image: url("./assets/lastPage.png");
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+
 }
 .Swiper{
   height: 46%;
