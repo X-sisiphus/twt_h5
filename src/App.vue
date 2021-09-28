@@ -149,7 +149,7 @@
       </div>
     </div>
     <div class="q-class" v-show="page == 17">
-      <div class="memory-class" :style="{height:bgHeight}">
+      <div class="memory-class">
         <swiper ref="mySwiper" :options="swiperOptions" class="Swiper">
           <swiper-slide><div class="img1" @click="img(1)"></div></swiper-slide>
           <swiper-slide><div class="img2" @click="img(2)"></div></swiper-slide>
@@ -383,7 +383,6 @@ export default {
     },
     nextPage(){
       this.page++;
-      if(this.page == 17)this.bgHeight = document.body.scrollHeight + "px";
     },
     preload() {
       let imgs = [
@@ -457,7 +456,7 @@ export default {
   height: 100%;
 }
 .text{
-  font-size: 109%;
+  font-size: 2.2vh;
   position: absolute;
   left: 52%;
   top: 71%;
@@ -466,6 +465,7 @@ export default {
   color:maroon;
 }
 .textarea{
+  display: flex;
       background:transparent;
       border-style:none; 
       border:0;  
@@ -475,7 +475,7 @@ export default {
    resize:none; 
    overflow-y:hidden;
    overflow-x:hidden;
-   font-size: 200%;
+   font-size: 3.3vh;
   position: absolute;
   left: 28%;
   top: 80%;
@@ -925,7 +925,7 @@ width: 100%;
   background-image: url("./assets/bMemory.png");
   background-size: 100% 100%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
