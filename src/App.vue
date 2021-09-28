@@ -324,7 +324,7 @@ export default {
      {
        backgroundColor:null,//画出来的图片有白色的边框,不要可设置背景为透明色（null）
        useCORS: true,//支持图片跨域
-      scale: 2,
+      scale: 1,
      }
    ).then(canvas => {
      //截图用img元素承装，显示在页面的上
