@@ -404,14 +404,26 @@ export default {
         require("./assets/question-seven.png"),
         require("./assets/question-eight.png"),
         require("./assets/lastPage.png"),
+        require("./assets/list1.png"),
+        require("./assets/list2.png"),
+        require("./assets/list3.png"),
+        require("./assets/list4.png"),
+        require("./assets/list5.png"),
+        require("./assets/list6.png"),
+        require("./assets/list7.png"),
+        require("./assets/list8.png"),
+        require("./assets/shitang.png"),
+        require("./assets/xuezi.png"),
+        require("./assets/fensi.png"),
+        require("./assets/jiaoshi.png"),
       ];
       for (let img of imgs) {
         let image = new Image();
         image.src = img;
         image.onload = () => {
           this.count++;
-          this.percent = Math.floor((this.count / 26) * 100);
-          if(this.percent == 100)this.page++;
+          this.percent = Math.floor((this.count / 38) * 100);
+          
         };
       }
     },
@@ -1147,7 +1159,7 @@ width: 100%;
 
 @keyframes allin {
   0% {
-    opacity: 0.3;
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
