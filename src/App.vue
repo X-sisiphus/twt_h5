@@ -161,7 +161,7 @@
          <textarea cols="10" class="textarea" v-model="text"></textarea>
       </div>
     </div>
-    <div class="q-class" v-show="page == 18">
+    <div class="q1-class" v-show="page == 18" :style="{height:bgHeight}">
         <div class="lastpage1">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -380,6 +380,7 @@ export default {
     },
     img(index){
       this.page = this.page + index;
+      if(this.page == 18)this.bgHeight = document.body.scrollHeight + "px";
     },
     nextPage(){
       this.page++;
@@ -525,6 +526,7 @@ export default {
   left: 58%;
   top: 62%;
   width: 28%;
+  height: 11%;
   animation: ani 1s ease;
   -webkit-animation: ani 0.4s ease;
 }
@@ -761,6 +763,12 @@ width: 100%;
 .q-class {
   width: 100%;
   height: 100vh;
+  
+  background-size: 100% 100%;
+}
+.q1-class {
+  width: 100%;
+  height: 100%;
   
   background-size: 100% 100%;
 }
