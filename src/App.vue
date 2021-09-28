@@ -161,7 +161,7 @@
          <textarea cols="10" class="textarea" v-model="text"></textarea>
       </div>
     </div>
-    <div class="q1-class" v-show="page == 18" :style="{height:bgHeight}">
+    <div class="q-class" v-show="page == 18">
         <div class="lastpage1">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -172,7 +172,7 @@
           <div :class="['list6-class' + (statue ? ' list6move' : '')]"><img src="@/assets/list6.png" height="100%" width="100%"></div>
           <div :class="['list7-class' + (statue ? ' list7move' : '')]"><img src="@/assets/list7.png" height="100%" width="100%"></div>
           <div :class="['list8-class' + (statue ? ' list8move' : '')]"><img src="@/assets/list8.png" height="100%" width="100%"></div>
-          <img src="@/assets/img1.png" height="100%" width="100%" style="position: absolute;left: 11%;top: 60.8%;width: 30%;height: 21%;">
+          <div class="iimg1"><img src="@/assets/img1.png" height="100%" width="100%"></div>
           <div class="iiimg1"><img src="@/assets/shitang.png" height="100%" width="100%"></div>
            <div class="text">{{ text }}</div>
           <div @click="getImg" class="getImg"></div>
@@ -324,7 +324,7 @@ export default {
      {
        backgroundColor:null,//画出来的图片有白色的边框,不要可设置背景为透明色（null）
        useCORS: true,//支持图片跨域
-      scale: 1,
+
      }
    ).then(canvas => {
      //截图用img元素承装，显示在页面的上
@@ -383,7 +383,6 @@ export default {
     },
     nextPage(){
       this.page++;
-      if(this.page == 18)this.bgHeight = document.body.scrollHeight + "px";
     },
     preload() {
       let imgs = [
@@ -526,7 +525,6 @@ export default {
   left: 58%;
   top: 62%;
   width: 28%;
-  height: 11%;
   animation: ani 1s ease;
   -webkit-animation: ani 0.4s ease;
 }
@@ -763,12 +761,6 @@ width: 100%;
 .q-class {
   width: 100%;
   height: 100vh;
-  
-  background-size: 100% 100%;
-}
-.q1-class {
-  width: 100%;
-  height: 100%;
   
   background-size: 100% 100%;
 }
@@ -1144,6 +1136,80 @@ width: 100%;
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 380px) {
+  .name-class {
+    transform: translateX(calc(-50% - 150px));
+  }
+}
+@media screen and (min-width: 400px) {
+  .name-class {
+    transform: translateX(calc(-50% - 158px));
+  }
+}
+@media screen and (max-width: 360px) {
+  .name-class {
+    transform: translateX(calc(-50% - 136px));
+  }
+}
+@media screen and (max-width: 340px) {
+  .name-class {
+    font-size: 19px;
+    transform: translateX(calc(-50% - 128px));
+  }
+}
+@media screen and (max-width: 330px) {
+  .name-class {
+    font-size: 19px;
+    transform: translateX(calc(-50% - 123px));
+  }
+}
+@media screen and (max-width: 300px) {
+  .name-class {
+    transform: translateX(calc(-50% - 143px));
+  }
+  .q4-class,
+  .cover-class,
+  .q6-class,
+  .rec-class {
+    background-size: 375px 100%;
+  }
+  .results-class,
+  .q2-1-class,
+  .q2-2-class,
+  .q3-1-class,
+  .q3-2-class,
+  .q5-2-class {
+    width: 375px;
+  }
+  .start-class {
+    width: 230px;
+    height: 68px;
+  }
+}
+@media screen and (min-width: 450px) {
+  .name-class {
+    transform: translateX(calc(-50% - 143px));
+  }
+  .q4-class,
+  .cover-class,
+  .q6-class,
+  .rec-class {
+    background-size: 375px 100%;
+  }
+  .results-class,
+  .q2-1-class,
+  .q2-2-class,
+  .q3-1-class,
+  .q3-2-class,
+  .q5-2-class {
+    width: 375px;
+  }
+  .start-class {
+    width: 230px;
+    height: 68px;
   }
 }
 
