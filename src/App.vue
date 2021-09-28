@@ -161,7 +161,7 @@
          <textarea cols="10" class="textarea" v-model="text"></textarea>
       </div>
     </div>
-    <div class="q1-class" v-show="page == 18" :style="{height:bgHeight}">
+    <div id="lastPage" class="q1-class" v-show="page == 18" :style="{height:bgHeight}">
         <div class="lastpage1">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -320,7 +320,7 @@ export default {
   methods: {
     getImg(){
    html2canvas(
-     document.getElementById('app'),
+     document.getElementById('lastPage'),
      {
        backgroundColor:null,//画出来的图片有白色的边框,不要可设置背景为透明色（null）
        useCORS: true,//支持图片跨域
