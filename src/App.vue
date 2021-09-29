@@ -10,7 +10,7 @@
     </div>
     <div class="cover-class" v-show="page == 0">
       <div class="start-class" @click="start"></div>
-      
+      <my-music />
     </div>
     <div class="q-class" v-show="page == 1">
       <div class="q1-1-class">
@@ -262,14 +262,15 @@ import Progress from 'vue-multiple-progress'
 import 'vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import html2canvas from 'html2canvas'
-
+import myMusic from "./music.vue";
 Vue.use(Progress)
 
 export default {
   name: "App",
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    myMusic
   },
   
 
