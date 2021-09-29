@@ -754,7 +754,7 @@ width: 100%;
 .Swiper{
   height: 46%;
   width: 60%;
-  position: fixed;
+  position: absolute;
   top: 22%;
   left: 21%;
   margin: 0%;
