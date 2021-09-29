@@ -162,6 +162,7 @@
       </div>
     </div>
     <div class="q-class" v-show="page == 18">
+      <div class="q-class" id="captureId">
         <div class="lastpage1">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -178,9 +179,10 @@
           <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
         </div>
-        
+      </div>
     </div>
     <div class="q-class" v-show="page == 19">
+      <div class="q-class" id="captureId">
         <div class="lastpage2">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -197,8 +199,10 @@
           <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
         </div>
+        </div>
     </div>
     <div class="q-class" v-show="page == 20">
+      <div class="q-class" id="captureId">
         <div class="lastpage3">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -215,8 +219,10 @@
            <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
         </div>
+      </div>
     </div>
     <div class="q-class" v-show="page == 21">
+      <div class="q-class" id="captureId">
         <div class="lastpage4">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -233,8 +239,10 @@
            <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
         </div>
+      </div>
     </div>
     <div class="q-class" v-show="page == 22">
+      <div class="q-class" id="captureId">
         <div class="lastpage5">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -251,15 +259,9 @@
            <div @click="getImg" class="getImg"></div>
       <div id="jietu" style="display: none"></div>
         </div>
+      </div>
     </div>
-
-
-
-
-
-
-
-
+    <img :src="dataURL" alt="share" v-show="page == 23" class="share-class" />
   </div>
 </template>
 <script>
@@ -281,6 +283,7 @@ export default {
 
   data: () => {
     return {
+      dataURL: "",
       bgHeight: "",
       qa: false,
       qb: false,
@@ -380,6 +383,15 @@ export default {
     },
     img(index){
       this.page = this.page + index;
+      setTimeout(() => {
+        html2canvas(document.querySelector("#captureId"), {
+          scale: 3,
+        }).then((canvas) => {
+          console.log(canvas);
+          this.dataURL = canvas.toDataURL("image/jpeg");
+          this.page = 23;
+        });
+      }, 2500);
     },
     nextPage(){
       this.page++;
@@ -454,6 +466,10 @@ export default {
   top: 89%;
   width: 100%;
   height: 100%;
+}
+.shareclass{
+  width: 100%;
+  height: 100vh;
 }
 .text{
   font-size: 2.2vh;
