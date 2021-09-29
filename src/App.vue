@@ -478,14 +478,7 @@ export default {
   text-align: center;
   overflow: hidden;
 }
-.getImg{
-  font-size: 17px;
-  position: absolute;
-  left: 55%;
-  top: 89%;
-  width: 100%;
-  height: 100%;
-}
+
 .share-class{
   width: 100%;
   height: 100vh;
@@ -495,7 +488,7 @@ export default {
   line-height: 3vh;
   position: absolute;
   left: 52%;
-  top: 71%;
+  top: 70.4%;
   width: 30%;
   height: 40%;
   color:maroon;
@@ -574,35 +567,35 @@ export default {
 .iimg5{
   position: absolute;
   left: 11%;
-  top: 60.8%;
+  top: 60%;
   width: 30%;
   height: 21%;
 }
 .iimg4{
   position: absolute;
   left: 11%;
-  top: 60.8%;
+  top: 60%;
   width: 30%;
   height: 21%;
 }
 .iimg3{
   position: absolute;
   left: 11%;
-  top: 60.8%;
+  top: 60%;
   width: 30%;
   height: 21%;
 }
 .iimg2{
   position: absolute;
   left: 11%;
-  top: 60.8%;
+  top: 60%;
   width: 30%;
   height: 21%;
 }
 .iimg1{
   position: absolute;
   left: 11%;
-  top: 60.8%;
+  top: 60%;
   width: 30%;
   height: 21%;
 }

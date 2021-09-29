@@ -77,9 +77,9 @@ export default {
   height: 10%;
   position: fixed;
   z-index: 2000;
-  top: 5%;
-  right: 5%;
-  
-  background-size: 100%;
+  top: 8.5%;
+  right: 1%;
+  background: url("./assets/unmusic.png") no-repeat;
+  background-size: 55%;
 }
 </style>
