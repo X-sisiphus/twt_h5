@@ -158,7 +158,7 @@
           <swiper-slide><div class="img5" @click="img(5)"></div></swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
-         <textarea cols="10" class="textarea" v-model="text" placeholder="点此写下感悟（可为空）并选择图片以继续" ></textarea>
+         <textarea cols="10" class="textarea" v-model="text" placeholder="点此写下感悟（可为空且不超过30字）并选择图片以继续" ></textarea>
       </div>
     </div>
     <div class="q-class" v-show="page == 18">
@@ -491,13 +491,15 @@ export default {
   height: 100vh;
 }
 .text{
-  font-size: 2.2vh;
+  font-size: 0.2vh;
+  line-height: 3vh;
   position: absolute;
   left: 52%;
   top: 71%;
   width: 30%;
   height: 40%;
   color:maroon;
+  word-wrap: break-word; word-break: normal;
 }
 .textarea{
   display: flex;
@@ -510,7 +512,8 @@ export default {
    resize:none; 
    overflow-y:hidden;
    overflow-x:hidden;
-   font-size: 3.3vh;
+   font-size: 2.8vh;
+  line-height: 4.8vh;
   position: absolute;
   left: 28%;
   top: 80%;
