@@ -73,13 +73,13 @@ export default {
   }
 }
 .isOff {
-  width: 20%;
-  height: 10%;
-  position: fixed;
+  width: 11%;
+  height: 5%;
+  position: absolute;
   z-index: 2000;
-  top: 8.5%;
-  right: 1%;
+  top: 7.59%;
+  right: 8.05%;
   background: url("./assets/unmusic.png") no-repeat;
-  background-size: 55%;
+  background-size: 100% 100%;
 }
 </style>
