@@ -176,6 +176,7 @@
           <div class="iimg1"><img src="@/assets/img1.png" height="100%" width="100%"></div>
           <div class="iiimg1"><img src="@/assets/shitang.png" height="100%" width="100%"></div>
            <div class="text">{{ text }}</div>
+           
         </div>
       </div>
     </div>
@@ -519,8 +520,9 @@ export default {
   
 }
 .textarea::placeholder{
-  
-  color:rgb(197, 188, 115);
+  font-size: 2vh;
+  line-height: 5vh;
+  color:rgb(105, 99, 60);
 }
 .iiimg5{
   position: absolute;
