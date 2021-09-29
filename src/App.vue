@@ -158,7 +158,7 @@
           <swiper-slide><div class="img5" @click="img(5)"></div></swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
-         <textarea cols="10" class="textarea" v-model="text" placeholder="点此写下感悟并选择图片以继续" ></textarea>
+         <textarea cols="10" class="textarea" v-model="text" placeholder="点此写下感悟（可为空）并选择图片以继续" ></textarea>
       </div>
     </div>
     <div class="q-class" v-show="page == 18">
