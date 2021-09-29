@@ -1,7 +1,7 @@
 
 <template>
   <div id="app">
- 
+ <my-music />
     <div class="loading-class" v-show="page == -1">
       <div class="content-class">
         <img src="./assets/logo.png" style="width: 77%; height: 11%" />
@@ -10,7 +10,7 @@
     </div>
     <div class="cover-class" v-show="page == 0">
       <div class="start-class" @click="start"></div>
-      <my-music />
+      
     </div>
     <div class="q-class" v-show="page == 1">
       <div class="q1-1-class">

@@ -46,15 +46,14 @@ export default {
  
 <style scoped>
 .isOn {
-  width: 20%;
-  height: 10%;
+  width: 11%;
+  height: 5%;
   position: fixed;
   z-index: 2000;
-  top: 5%;
-  right: 5%;
-  -webkit-animation: rotating 1.2s linear infinite;
-  animation: rotating 1.2s linear infinite;
-  background-size: 100%;
+  top: 7.59%;
+  right: 8.05%;
+  background: url("./assets/music.png") no-repeat;
+  background-size: 100% 100%;
 }
 @keyframes rotating {
   from {
@@ -75,7 +74,7 @@ export default {
 .isOff {
   width: 11%;
   height: 5%;
-  position: absolute;
+  position: fixed;
   z-index: 2000;
   top: 7.59%;
   right: 8.05%;
