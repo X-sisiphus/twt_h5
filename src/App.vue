@@ -158,11 +158,11 @@
           <swiper-slide><div class="img5" @click="img(5)"></div></swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
-         <textarea cols="10" class="textarea" v-model="text" placeholder="点此写下感悟并选择图片继续"></textarea>
+         <textarea cols="10" class="textarea" v-model="text" placeholder="点此写下感悟并选择图片以继续" ></textarea>
       </div>
     </div>
     <div class="q-class" v-show="page == 18">
-      <div class="q-class" id="captureId">
+      <div class="q-class" id="captureId1">
         <div class="lastpage1">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -180,7 +180,7 @@
       </div>
     </div>
     <div class="q-class" v-show="page == 19">
-      <div class="q-class" id="captureId">
+      <div class="q-class" id="captureId2">
         <div class="lastpage2">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -198,7 +198,7 @@
         </div>
     </div>
     <div class="q-class" v-show="page == 20">
-      <div class="q-class" id="captureId">
+      <div class="q-class" id="captureId3">
         <div class="lastpage3">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -216,7 +216,7 @@
       </div>
     </div>
     <div class="q-class" v-show="page == 21">
-      <div class="q-class" id="captureId">
+      <div class="q-class" id="captureId4">
         <div class="lastpage4">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -235,7 +235,7 @@
       </div>
     </div>
     <div class="q-class" v-show="page == 22">
-      <div class="q-class" id="captureId">
+      <div class="q-class" id="captureId5">
         <div class="lastpage5">
           <img src="@/assets/lastPage.png" height="100%" width="100%">
           <div :class="['list1-class' + (statue ? ' list1move' : '')]"><img src="@/assets/list1.png" height="100%" width="100%"></div>
@@ -354,15 +354,61 @@ export default {
     },
     img(index){
       this.page = this.page + index;
+      if(index == 1){
       setTimeout(() => {
-        html2canvas(document.querySelector("#captureId"), {
+        html2canvas(document.querySelector("#captureId1"), {
           scale: 3,
         }).then((canvas) => {
           console.log(canvas);
           this.dataURL = canvas.toDataURL("image/jpeg");
           this.page = 23;
         });
-      }, 2500);
+      }, 2500)
+      }
+      if(index == 2){
+      setTimeout(() => {
+        html2canvas(document.querySelector("#captureId2"), {
+          scale: 3,
+        }).then((canvas) => {
+          console.log(canvas);
+          this.dataURL = canvas.toDataURL("image/jpeg");
+          this.page = 23;
+        });
+      }, 2500)
+      }
+      if(index == 3){
+      setTimeout(() => {
+        html2canvas(document.querySelector("#captureId3"), {
+          scale: 3,
+        }).then((canvas) => {
+          console.log(canvas);
+          this.dataURL = canvas.toDataURL("image/jpeg");
+          this.page = 23;
+        });
+      }, 2500)
+      }
+      if(index == 4){
+      setTimeout(() => {
+        html2canvas(document.querySelector("#captureId4"), {
+          scale: 3,
+        }).then((canvas) => {
+          console.log(canvas);
+          this.dataURL = canvas.toDataURL("image/jpeg");
+          this.page = 23;
+        });
+      }, 2500)
+      }
+      if(index == 5){
+      setTimeout(() => {
+        html2canvas(document.querySelector("#captureId5"), {
+          scale: 3,
+        }).then((canvas) => {
+          console.log(canvas);
+          this.dataURL = canvas.toDataURL("image/jpeg");
+          this.page = 23;
+        });
+      }, 2500)
+      }
     },
     nextPage(){
       this.page++;
@@ -470,6 +516,10 @@ export default {
   height: 40%;
   color:maroon;
   
+}
+.textarea::placeholder{
+  
+  color:rgb(197, 188, 115);
 }
 .iiimg5{
   position: absolute;
