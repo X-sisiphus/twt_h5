@@ -484,7 +484,7 @@ export default {
   height: 100vh;
 }
 .text{
-  font-size: 0.2vh;
+  font-size: 1.5vh;
   line-height: 3vh;
   position: absolute;
   left: 52%;
