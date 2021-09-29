@@ -4,7 +4,7 @@
  
     <div class="loading-class" v-show="page == -1">
       <div class="content-class">
-        <img src="./assets/logo-twt.png" style="width: 125px; height: 20px" />
+        <img src="./assets/logo.png" style="width: 77%; height: 11%" />
         <vm-progress :percentage="percent"></vm-progress>
       </div>
     </div>
@@ -415,7 +415,7 @@ export default {
     },
     preload() {
       let imgs = [
-        require("./assets/logo-twt.png"),
+        require("./assets/logo.png"),
         require("./assets/bMemory.png"),
         require("./assets/img1.png"),
         require("./assets/img2.png"),
