@@ -176,8 +176,6 @@
           <div class="iimg1"><img src="@/assets/img1.png" height="100%" width="100%"></div>
           <div class="iiimg1"><img src="@/assets/shitang.png" height="100%" width="100%"></div>
            <div class="text">{{ text }}</div>
-          <div @click="getImg" class="getImg"></div>
-      <div id="jietu" style="display: none"></div>
         </div>
       </div>
     </div>
@@ -196,8 +194,6 @@
           <div class="iimg2"><img src="@/assets/img2.png" height="100%" width="100%"></div>
           <div class="iiimg2"><img src="@/assets/fensi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
-          <div @click="getImg" class="getImg"></div>
-      <div id="jietu" style="display: none"></div>
         </div>
         </div>
     </div>
@@ -216,8 +212,6 @@
           <div class="iimg3"><img src="@/assets/img3.png" height="100%" width="100%"></div>
           <div class="iiimg3"><img src="@/assets/xuezi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
-           <div @click="getImg" class="getImg"></div>
-      <div id="jietu" style="display: none"></div>
         </div>
       </div>
     </div>
@@ -236,8 +230,7 @@
           <div class="iimg4"><img src="@/assets/img4.png" height="100%" width="100%"></div>
           <div class="iiimg4"><img src="@/assets/fensi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
-           <div @click="getImg" class="getImg"></div>
-      <div id="jietu" style="display: none"></div>
+         
         </div>
       </div>
     </div>
@@ -256,8 +249,7 @@
           <div class="iimg5"><img src="@/assets/img5.png" height="100%" width="100%"></div>
           <div class="iiimg5"><img src="@/assets/jiaoshi.png" height="100%" width="100%"></div>
           <div class="text">{{ text }}</div>
-           <div @click="getImg" class="getImg"></div>
-      <div id="jietu" style="display: none"></div>
+    
         </div>
       </div>
     </div>
@@ -321,27 +313,6 @@ export default {
     },
   },
   methods: {
-    getImg(){
-   html2canvas(
-     document.getElementById('app'),
-     {
-       backgroundColor:null,//画出来的图片有白色的边框,不要可设置背景为透明色（null）
-       useCORS: true,//支持图片跨域
-
-     }
-   ).then(canvas => {
-     //截图用img元素承装，显示在页面的上
-     let img = new Image();
-     img.src = canvas.toDataURL('image/jpeg');// toDataURL :图片格式转成 base64
-     document.getElementById('jietu').appendChild(img);
- 
-     //如果你需要下载截图，可以使用a标签进行下载
-     let a = document.createElement('a');
-     a.href = canvas.toDataURL('image/jpeg');
-     a.download = '截图';
-     a.click();
-   })
- },
     start() {
       this.page++;
     },
@@ -467,7 +438,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.shareclass{
+.share-class{
   width: 100%;
   height: 100vh;
 }
